@@ -1,7 +1,4 @@
-# 4COSC010C Software Development II - EXACT MOCK PATTERN MATCH | Guess 2
-## Parking Lot Reservation App - Exam Questions & Answers (Best Guess)
-
----
+# Guess 2 out of 4
 
 ## **QUESTION 1: Array Implementation and Zone Management (20 marks)**
 
