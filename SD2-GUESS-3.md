@@ -1,11 +1,4 @@
-# 4COSC010C Software Development II - Lab-based Assessment | Guess 3
-## Parking Lot Reservation App - FINAL EXAM QUESTIONS & ANSWERS
-
-**Duration:** 2 hours  
-**Total Marks:** 100  
-**Instructions:** Complete all questions. Provide complete working code for all programming tasks.
-
----
+# Guess 3 out of 4
 
 ## **SECTION A: Array Management and Data Structures (25 marks)**
 
