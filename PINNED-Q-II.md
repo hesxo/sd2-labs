@@ -1,3 +1,12 @@
+Add these global variables to the class
+
+```java
+static VehicleOwner[] owners = new VehicleOwner[20];
+static int ownerCount = 0;
+```
+
+Then,
+
 ```java
 private static void registerOwner() {
     Scanner input = new Scanner(System.in);
