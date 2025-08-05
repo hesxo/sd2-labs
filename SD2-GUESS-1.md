@@ -1,7 +1,4 @@
-# 4COSC010C Software Development II | Guess 1
-## Parking Lot Reservation App - Complete Exam Questions & Answers
-
----
+# Guess 1 out of 4
 
 ## **QUESTION 1: Understanding Arrays and Data Structures (15 marks)**
 
