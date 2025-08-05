@@ -1,9 +1,4 @@
-# 4COSC010C Software Development II - SIMPLE EXAM GUESS | Guess 4
-## Parking Lot Reservation App - Final Assessment
-
-**Total Marks: 100 | Duration: 2 hours**
-
----
+# Guess 4 out of 4
 
 ## **QUESTION 1: Add Zone C (20 marks)**
 
