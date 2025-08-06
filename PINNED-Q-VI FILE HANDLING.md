@@ -1,5 +1,7 @@
 File Handling
 
+Method #1
+
 ```java
     private static void saveToFile() {
         try {
@@ -23,3 +25,27 @@ File Handling
             System.out.println("Error while writing to file.");
         }
     }
+```
+
+Method #2
+
+```java
+private static void saveToFile() {
+    try {
+        FileWriter file = new FileWriter("ParkingData.txt");
+        file.write("Data:\n");
+        
+        // Save registered owners
+        for (int i = 0; i < ownerCount; i++) {
+            file.write(owners[i].getOwnerName() + " " + 
+                      owners[i].getVehicleRegistration() + " " + 
+                      owners[i].getContactNumber() + "\n");
+        }
+        
+        file.close();
+        System.out.println("Data saved to file.");
+    } catch (IOException exception) {
+        System.out.println("Error while writing to file.");
+    }
+}
+```
