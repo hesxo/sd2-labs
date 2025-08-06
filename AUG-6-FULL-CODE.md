@@ -16,10 +16,10 @@ public class App {
     }
 
     public static void initialiseZones() {
-        parkingStructure = new int[3][];
+        parkingStructure = new int[3][]; // :::::::::: QUESTION 1
         parkingStructure[0] = new int[10]; // Zone A: Compact (10 slots)
         parkingStructure[1] = new int[14]; // Zone B: Standard (14 slots)
-        parkingStructure[2] = new int[8]; // Zone C: Luxury (8 slots)
+        parkingStructure[2] = new int[8]; // Zone C: Luxury (8 slots) :::::::::: QUESTION 1
     }
 
     public static void runMenu() {
@@ -46,6 +46,9 @@ public class App {
                 case 5:
                     saveToFile();
                     break;
+                case 6: // :::::::::: QUESTION 3 or 4
+                    searchOwnerByVehicleRegNo();
+                    break;
                 default:
                     System.out.println("Option not available. Please select a valid option:");
             }
@@ -66,6 +69,7 @@ public class App {
             System.out.println("|  3) Add new parking zone                    |");
             System.out.println("|  4) Register vehicle owner                  |");
             System.out.println("|  5) Save information to file                |");
+            System.out.println("|  6) Search Owner by Vehcile Reg No          |"); // :::::::::: QUESTION 3 or 4
             System.out.println("|  0) Quit                                    |");
             System.out.println("+---------------------------------------------+");
             System.out.print("Please select an option: ");
@@ -84,7 +88,7 @@ public class App {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter zone (A/B): ");
         String zoneInput = input.next().toUpperCase();
-        int zoneIndex = zoneInput.equals("A") ? 0 : zoneInput.equals("B") ? 1 : zoneInput.equals("C") ? 2 : -1;
+        int zoneIndex = zoneInput.equals("A") ? 0 : zoneInput.equals("B") ? 1 : zoneInput.equals("C") ? 2 : -1; // :::::::::: QUESTION 2
         
 
         if (zoneIndex == -1) {
@@ -114,7 +118,7 @@ public class App {
         System.out.println("                PARKING LOT STATUS             ");
         System.out.println("=".repeat(60));
 
-        String[] zoneLabels = {"Zone A (Compact)", "Zone B (Standard)"};
+        String[] zoneLabels = {"Zone A (Compact)", "Zone B (Standard)", "Zone C (Luxury)"}; // :::::::::: QUESTION 2
         for (int i = 0; i < parkingStructure.length; i++) {
             System.out.print(zoneLabels[i] + "  ");
             for (int j = 0; j < parkingStructure[i].length; j++) {
@@ -123,6 +127,7 @@ public class App {
                 } else {
                     System.out.print("[X]");
                 }
+                fw.write(parkingStructure[i][j] == 0 ? "[O]" : "[X]");
             }
             System.out.println();
         }
@@ -133,7 +138,7 @@ public class App {
         System.out.println();
     }
 
-    private static void addZone() {
+    private static void addZone() { // :::::::::: QUESTION 5
         // method not implemented
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter zone name using single character: "); // F
@@ -149,7 +154,7 @@ public class App {
         System.out.println(zoneInput + " zone added with " + zoneSlots + " slots"); // F zone added with 10 slots
     }
 
-    private static void registerOwner() {
+    private static void registerOwner() { // :::::::::: QUESTION 4
         // method not implemented
         Scanner sc = new Scanner(System.in);
         
@@ -170,7 +175,7 @@ public class App {
         System.out.println("New vehicle owner registered.");
     }
     
-    private static void searchOwnerByVehicleRegNo() {
+    private static void searchOwnerByVehicleRegNo() { // :::::::::: QUESTION 5
       Scanner sc = new Scanner(System.in);
       System.out.print("Enter Vehicle Reg No. : ");
       String search = sc.nextLine().trim();
@@ -188,7 +193,7 @@ public class App {
       }
     }
 
-    private static void saveToFile() {
+    private static void saveToFile() { // :::::::::: QUESTION 6
         try {
             FileWriter file = new FileWriter("ParkingData.txt");
             file.write("Data:\n");
@@ -216,7 +221,7 @@ public class App {
     }
 }
 
-public class VehicleOwner {
+public class VehicleOwner { // :::::::::: QUESTION 3
   private String name;
   private String vehicleRegNo;
   private String contactNumber;
