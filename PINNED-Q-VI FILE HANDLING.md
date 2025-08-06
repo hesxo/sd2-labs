@@ -3,21 +3,25 @@ File Handling
 Method #1
 
 ```java
-    private static void saveToFile() {
+    private static void saveToFile() { // :::::::::: QUESTION 6
         try {
             FileWriter file = new FileWriter("ParkingData.txt");
             file.write("Data:\n");
-            String[] zoneLabels = {"Zone A (Compact)", "Zone B (Standard)"};
+            // Implement save data here based on test task
+            String[] zoneLabels = {"Zone A (Compact)", "Zone B (Standard)", "Zone C (Luxury)"};
             for (int i = 0; i < parkingStructure.length; i++) {
                 file.write(zoneLabels[i] + "  ");
                 for (int j = 0; j < parkingStructure[i].length; j++) {
-                    file.write(parkingStructure[i][j] == 0 ? "O" : "X");
+                    if (parkingStructure[i][j] == 0) {
+                        file.write("[O]");
+                    } else {
+                        file.write("[X]");
+                    }
                 }
                 file.write("\n");
             }
-            file.write("Owners:\n");
-            for (int i = 0; i < owners.length; i++) {
-                file.write(owners[i].toString() + "\n");
+            for (int j = 0; j < owners.length; j++) {
+              fw.write(owners[j].getName() + " " + owners[j].getVehicleRegNo() + " " + owners[j].getContactNumber());
             }
             file.close();
             System.out.println("Data saved to file.");
