@@ -26,9 +26,6 @@ private static void searchOwnerByRegistration() {
 without failsafe
 
 ```java
-Search Owner by registration number of vehicle
-
-```java
 private static void searchOwnerByRegistration() {
     Scanner input = new Scanner(System.in);
     
